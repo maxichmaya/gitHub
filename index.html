@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Github fun</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <input name="username" placeholder="username" type="text">
+        <input name="password" placeholder="password" type="password">
+        <input name="user-to-search" placeholder="github user to search" type="text">
+        <button class="submit-button "type="button" name="button">Submit</button>
+
+<!-- // step2 -->
+<div class="data-container">
+
+</div>
+
+
+<!-- // this is step 1 -->
+<script id="dataTemplate" type="text/x-handlebars-template">
+    {{#data}}
+
+                    {{#owner}}
+                <span><img src={{avatar_url}} class="avatarPhoto"></img></span>
+                    {{/owner}}
+                    <div class="dataShow"><strong>{{ full_name }}</strong></div>
+    {{/data}}
+</script>
+<!-- step 1b -->
+<script id="dataRep" type="text/x-handlebars-template">
+    {{#data}}
+        <ul> {{#with commit}} <li class="message">{{message}} </li>{{/with}}</ul>
+
+    {{/data}}
+</script>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+
+</html>
